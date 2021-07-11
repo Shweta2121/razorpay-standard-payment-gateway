@@ -1,0 +1,61 @@
+  <div class="uk-container">
+    <div class="uk-card uk-card-default uk-card-body">
+      <section class="subscription-panel">
+        <nav class="tu-panel-nav" id="navInd">
+          <div class="uk-width-1-1">
+            <div uk-sticky="bottom: true; offset: 80; media: @s">
+              <h3 class="head">Create Subscription</h3>
+              <p class="para">Provide details to create a subscription link</p>
+              <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                <li>Plan Details</li>
+                <li>Add Ons</li>
+                <li>Link Details</li>
+                <li>Review</li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="tu-panel-page-holder uk-width-expand">
+          <div class="uk-width-1-1 tu-p-30 tu-p-sm-15">
+            <div class="main-cont">
+              <h3 class="head">Plan Details</h3>
+              <div class="uk-form-horizontal uk-margin-large">
+                <form [formGroup]="myForm" autocomplete="off" (submit)="onSubmit(myForm.value)">
+                  <div class="uk-margin">
+                    <label class="uk-form-label" for="plan_id">Select</label>
+                    <div class="uk-form-controls">
+                      <select formControlName="plan_id" class="uk-select" id="form-horizontal-select">
+                        <option *ngFor="let plan of plans" [innerHtml]="plan.id" [value]="plan.id">
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="uk-margin">
+                    <label class="uk-form-label" for="total_count"> Total Count </label>
+                    <input formControlName="total_count" class="uk-input uk-form-width-large" type="text" value=""
+                      placeholder="total count">
+                  </div>
+                  <div class="uk-margin">
+                    <button type="submit"
+                      class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom">Submit</button>
+                  </div>
+                </form>
+                <div class="uk-margin">
+                  <form ngNoForm action="http://localhost:8081/payment/success/" method="POST">
+                    <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_xQFRtuT2Isa3wg"
+                      data-amount="50000" data-currency="INR" data-subscription_id="razorpay_subscription_id"
+                      data-buttontext="Pay with Razorpay" data-name="Acme Corp" data-description="Test transaction"
+                      data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
+                      data-prefill.email="gaurav.kumar@example.com" data-prefill.contact="9999999999"
+                      data-theme.color="#F37254"></script>
+                    <input type="hidden" custom="Hidden Element" name="hidden">
+                    <button class="uk-align-right uk-button uk-button-primary">Checkout</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>

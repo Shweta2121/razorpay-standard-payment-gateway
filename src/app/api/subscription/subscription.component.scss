@@ -1,0 +1,70 @@
+section.subscription-panel {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.head {
+  color: #58666e;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 16px;
+}
+
+label.uk-form-label {
+  color: #58666e;
+  font-weight: bold;
+  //   text-align: right;
+}
+
+.para {
+  font-size: 14px;
+  color: #58666e;
+}
+
+nav#navInd {
+  width: 240px;
+  background: #fff;
+  height: 100%;
+  border-right: 1px solid #eee;
+}
+
+.subscription-panel .tu-panel-nav>div {
+  padding: 30px;
+}
+
+ul.uk-nav-default.uk-nav-parent-icon.uk-nav {
+  font-size: 0.875rem;
+}
+
+li {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 0px;
+  margin: 4px 0;
+  color: #57666d;
+  position: relative;
+
+}
+
+.tu-panel-page-holder.uk-width-expand {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+  padding-left: 0;
+}
+
+.txt {
+  margin: 6px 0;
+  color: #838383;
+  font-size: 13px;
+  white-space: normal;
+}
+
+.uk-width-1-1.tu-p-30.tu-p-sm-15 {
+  padding: 30px !important;
+}
